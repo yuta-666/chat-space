@@ -1,0 +1,128 @@
+.main-chat {
+  height: 100vh;
+  width: calc(100vw - 300px);
+  background-color: $white;
+  float: right;
+
+  .main-header{
+    height: 100px;
+    background-color: $white;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+
+    &__left-box {
+      margin-left: 40px;
+
+      &__group-name{
+        color: $text-black;
+        font-size: 20px;
+        padding-top:35px;
+      }
+
+      &__member-list {
+        color: $sub-text;
+        font-size: 12px;
+        padding-top: 15px;
+        display: flex;
+      }
+    }
+
+    &__edit-btn {
+      height: 40px;
+      line-height: 40px;
+      padding: 0 20px;
+      margin-top: 28px;
+      right: 40px;
+      font-size: 16px;
+      border: solid 1px $btn-blue;
+      position: absolute;
+
+      a {
+        color: $btn-blue; 
+        text-decoration: none;
+      }
+    }
+  }
+
+  .messages{
+    height: calc(100vh - 190px);
+    background-color: #fafafa;
+    padding: 46px 40px;
+
+    .message {
+      padding-bottom: 46px;
+
+      &__info {
+        margin-bottom: 10px;
+        display: flex;
+
+        &__talker {
+          color: $text-black;
+          font-size: 16px;
+          font-weight: bold;
+        }
+
+        &__data {
+          margin-left: 10px;
+          color: $sub-text;
+          font-size: 12px;
+        }
+      }
+
+      &__text {
+        margin-bottom: 10px;
+        color: $message-grey;
+        background-color: g;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .form {
+    height: 90px;
+    background-color: #d2d2d2;
+    padding: 20px 40px;
+    display: flex;
+
+    form {
+      display: flex;
+      width: 100%;
+
+      .input-box {
+        width: 100%;
+        position: relative;
+
+        &__text {
+          height: 50px;
+          line-height: 50px;
+          width: 100%;
+          padding: 0 40px 0 10px;
+          color: $message-grey;
+          border-style: none;
+          }
+
+        &__image {
+          position: absolute;
+          cursor: pointer;
+          font-size: 1.3rem;
+          top: 10px;
+          right: 10px;
+
+          &__file {
+            display: none;
+            }
+          }
+        }
+      
+      .send-btn {
+        color: $white;
+        padding: 0 30px;
+        margin-left: 15px;
+        background-color: $btn-blue;
+        width: 100px;
+        cursor: pointer;
+      }
+    }
+  }
+}
