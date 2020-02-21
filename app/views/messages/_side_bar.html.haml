@@ -5,15 +5,17 @@
         = current_user.name
       %ul.side-header__box__menu
         %li.side-header__box__menu__new-group
-          = link_to "#" do
+          = link_to  new_group_path do
             = icon('fa', 'edit')
         %li.side-header__box__menu__edit-user
-          = link_to edit_user_path(current_user) do
+          = link_to edit_user_path(current_user.id) do
             = icon('fa', 'cog')
   .groups
-    .group
-      .group__group-name 
-        name
-      .group__group-message
-        メッセージ
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#' do
+          .group__group-name 
+            = group.name
+          .group__group-message
+            メッセージはないよ
   
