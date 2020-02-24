@@ -10,36 +10,24 @@
         %li.main-header__left-box__member-list--member
           list
     .main-header__edit-btn
-      = link_to "Edit", "#"
+      = link_to "#" do
+        Edit
 
   .messages
-    -# = render @messages
     .meesage
       .message__info
         %p.message__info__talker
-          -# = message.user.name
+          name
         %p.message__info__data
-          -# = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+          data
       %p.message__text
-        -# - if message.content.present?
-        -#   = %message.content
-        -# = image_tag message.image.url, class: 'message__image'
-
-  -# .form
-  -#   = form_for [@group, @message] do |f|
-  -#     = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-  -#     .form__mask
-  -#       = f.label :image, class: 'form__mask__image' do
-  -#         = icon('fa', 'image', class: 'icon')
-  -#         = f.file_field :image, class: 'hidden'
-  -#     = f.submit 'Send', class: 'form__submit'
-
+        メッセージ
 
   .form
-    %form.new-message
-      .input-box
-        %input{type:"text",class: "input-box__text", placeholder: "type a message"} 
-          %label{class: "input-box__image"}
-            = icon('fa', 'image')
-            %input{type: "file", class:         "input-box__image__file"}
-      %input{type: "submit", class: "send-btn", value: "Send"}
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fa', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'

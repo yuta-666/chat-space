@@ -78,49 +78,48 @@
     }
   }
   
-  .form {
-    height: 90px;
-    background-color: #d2d2d2;
-    padding: 20px 40px;
-    display: flex;
+    .form {
+      background-color: #d2d2d2;
+      box-sizing: border-box;
+      height: 90px;
+      width: calc(100% - 300px);
+      padding: 20px 50px 20px 40px;
+      position: fixed;
+      bottom: 0;
+      left: 300px;
+      z-index: 5;
 
-    form {
-      display: flex;
-      width: 100%;
+      &__message {
+        border: none;
+        float: left;
+        height: 50px;
+        width: calc(100% - 150px);
+      }
 
-      .input-box {
-        width: 100%;
-        position: relative;
-
-        &__text {
-          height: 50px;
-          line-height: 50px;
-          width: 100%;
-          padding: 0 40px 0 10px;
-          color: $message-grey;
-          border-style: none;
-          }
-
+      &__mask {
+        background-color: $white;
+        float: left;
+        height: 50px;
+        padding-right: 10px;
         &__image {
-          position: absolute;
+          font-size: 20px;
+          line-height: 50px;
           cursor: pointer;
-          font-size: 1.3rem;
-          top: 10px;
-          right: 10px;
-
-          &__file {
-            display: none;
-          }
+        }
+        .hidden {
+          display: none;
         }
       }
-      
-      .send-btn {
+    
+    
+        &__submit {
         color: $white;
         padding: 0 30px;
         margin-left: 15px;
         background-color: $btn-blue;
         width: 100px;
+        height: 50px;
       }
-    }
+
   }
 }
