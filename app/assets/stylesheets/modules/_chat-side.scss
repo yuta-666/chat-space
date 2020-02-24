@@ -3,7 +3,7 @@
   background-color: $side-mian;
   color: $white;
   float: left;
-
+  
   .side-header {
     height: 100px;
     background-color: $side-mian;
@@ -59,7 +59,10 @@
       &__group-message {
         font-size: 11px;
       }
+
+      a {
+        text-decoration: none;
+        color: $white;
+      }
     }
   }
-
-
