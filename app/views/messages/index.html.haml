@@ -4,24 +4,18 @@
   .main-header
     .main-header__left-box
       .main-header__left-box__group-name
-        name
-      %ul.main-header__left-box__member-list
-        Menber : 
-        %li.main-header__left-box__member-list--member
-          list
+        = @group.name
+        %ul.main-header__left-box__member-list
+          Members:
+          - @group.users.each do |user|
+            %li.main-header__left-box__member-list--member
+              = user.name
     .main-header__edit-btn
-      = link_to "#" do
+      = link_to edit_group_path(@group) do
         Edit
 
   .messages
-    .meesage
-      .message__info
-        %p.message__info__talker
-          name
-        %p.message__info__data
-          data
-      %p.message__text
-        メッセージ
+    = render @messages
 
   .form
     = form_for [@group, @message] do |f|
